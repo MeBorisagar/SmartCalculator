@@ -1,0 +1,26 @@
+# Functional Requirements
+
+| ID        | Functional Requirement                                                                                                                                                                      | Priority        |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| **FR-1**  | The calculator shall support basic arithmetic operations: addition, subtraction, multiplication, and division.                                                                              | **Must Have**   |
+| **FR-2**  | The calculator shall support advanced arithmetic operations: square, square root, cube, cube root, power, modulus, percentage, reciprocal, and absolute value.                              | **Should Have** |
+| **FR-3**  | The calculator shall support mathematical functions such as logarithm, exponent, factorial, and trigonometric functions.                                                                    | **Should Have** |
+| **FR-4**  | The calculator shall accept numeric inputs (integers, floating-point numbers, and negative numbers) through both the user interface and keyboard.                                           | **Must Have**   |
+| **FR-5**  | The calculator shall allow users to enter mathematical expressions and evaluate them according to the BODMAS rule.                                                                          | **Must Have**   |
+| **FR-6**  | The calculator shall correctly process expressions containing parentheses.                                                                                                                  | **Must Have**   |
+| **FR-7**  | The calculator shall evaluate an expression when the user presses the **Enter** key or the **=** button.                                                                                    | **Must Have**   |
+| **FR-8**  | The calculator shall display the entered expression, calculated result, and meaningful error messages.                                                                                      | **Must Have**   |
+| **FR-9**  | The calculator shall provide a graphical user interface containing numeric buttons, operators, mathematical functions, a display screen, an Enter button, a History button, and a menu bar. | **Must Have**   |
+| **FR-10** | The user shall be able to view the calculation history.                                                                                                                                     | **Should Have** |
+| **FR-11** | The calculator shall maintain the history of previous calculations during the current session.                                                                                              | **Should Have** |
+| **FR-12** | Each history entry shall include the expression, result, and timestamp.                                                                                                                     | **Should Have** |
+| **FR-13** | The user shall be able to reuse a previous calculation from the history.                                                                                                                    | **Could Have**  |
+| **FR-14** | The user shall be able to clear the calculation history.                                                                                                                                    | **Should Have** |
+| **FR-15** | The calculator shall identify invalid expressions and display meaningful error messages.                                                                                                    | **Must Have**   |
+| **FR-16** | The calculator shall handle arithmetic errors such as division by zero, negative square root, and overflow.                                                                                 | **Must Have**   |
+| **FR-17** | The calculator shall provide user preferences that are retained until changed.                                                                                                              | **Should Have** |
+| **FR-18** | The user shall be able to configure the decimal precision of calculation results.                                                                                                           | **Should Have** |
+| **FR-19** | The user shall be able to switch between Light and Dark themes.                                                                                                                             | **Could Have**  |
+| **FR-20** | The calculator shall provide a **Clear** option to clear the current expression.                                                                                                            | **Must Have**   |
+| **FR-21** | The calculator shall provide a **Clear All** option to start a new calculation session.                                                                                                     | **Must Have**   |
+| **FR-22** | The user shall be able to close the application using the provided exit option.                                                                                                             | **Must Have**   |
