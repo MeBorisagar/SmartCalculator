@@ -1,21 +1,13 @@
-# Non-Functional Requirements
+## Non-Functional Requirements
 
 ### NFR-1: Usability
-
-The calculator shall provide an intuitive and user-friendly interface that is easy to navigate and use.
+The calculator shall provide clear prompts and meaningful error messages to help users interact with the application through the command line.
 
 ### NFR-2: Performance
-
-The application shall evaluate calculations within **500 milliseconds**, and the application startup time shall not exceed **3 seconds**.
+The calculator shall complete each calculation and display the result within **1 second** under normal operating conditions.
 
 ### NFR-3: Reliability
-
-The calculator shall produce accurate and consistent results for all supported mathematical operations.
+The calculator shall produce accurate results and continue running after handling invalid input or arithmetic errors.
 
 ### NFR-4: Maintainability
-
-The application shall be designed using a modular architecture to facilitate future enhancements, maintenance, and feature additions.
-
-### NFR-5: Portability
-
-The application shall operate across major desktop operating systems (**Windows, Linux, and macOS**) and mobile platforms (**Android and iOS**).
+The application shall be modular and easy to maintain, allowing new arithmetic operations to be added with minimal changes.
