@@ -1,6 +1,8 @@
 package com.meet.calculator;
 
-import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,14 +10,15 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+         Logger log = LoggerFactory.getLogger(Main.class);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("=== SmartCalculator ===");
-        System.out.println("Type 'exit' to quit.");
+        log.info("=== SmartCalculator ===");
+        log.info("Type 'exit' to quit.");
 
         while(true){
 
-            System.out.print("Enter first number (or 'exit'): ");
+            log.info("Enter first number (or 'exit'): ");
 
             String input = br.readLine().trim();
 
@@ -26,11 +29,11 @@ public class Main {
             try {
                 firstNum = Double.parseDouble(input);
             } catch (NumberFormatException e) {
-                System.out.println("Invalid number. Please enter a valid number.");
+                log.warn("Invalid number. Please enter a valid number.");
                 continue;
             }
 
-            System.out.print("Enter operator (+ - * / %): ");
+            log.info("Enter operator (+ - * / %): ");
             String op = br.readLine().trim();
 
             if (!op.equals("+") &&
@@ -39,17 +42,17 @@ public class Main {
                     !op.equals("/") &&
                     !op.equals("%")) {
 
-                System.out.println("Invalid operator. Please try again.");
+                log.info("Invalid operator. Please try again.");
                 continue;
             }
 
-            System.out.print("Enter second number: ");
+            log.info("Enter second number: ");
             double secondNum;
 
             try {
                 secondNum = Double.parseDouble(br.readLine().trim());
             } catch (NumberFormatException e) {
-                System.out.println("Invalid number. Please enter a valid number.");
+                log.warn("Invalid number. Please enter a valid number.");
                 continue;
             }
 
@@ -60,19 +63,19 @@ public class Main {
                 case "*" -> firstNum * secondNum;
                 case "/" -> {
                     if (secondNum == 0) {
-                        System.out.println("Error: division by zero");
+                        log.info("Error: division by zero");
                         yield Double.NaN;
                     }
                     else yield firstNum / secondNum;
                 }
                 case "%" -> firstNum % secondNum;
-                default -> { System.out.println("Unknown operator"); yield
+                default -> { log.info("Unknown operator"); yield
                         Double.NaN; }
             };
             if (!Double.isNaN(result))
-                System.out.printf("Result: %.2f%n", result);
+                log.info( "Calculation performed: {} {} {} = {}", firstNum, op, secondNum, result );
         }
-        System.out.println("Goodbye!");
+        log.info("Goodbye!");
     }
 }
 
