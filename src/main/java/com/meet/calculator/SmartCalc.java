@@ -3,15 +3,26 @@ package com.meet.calculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
+public class SmartCalc {
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-         Logger log = LoggerFactory.getLogger(Main.class);
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    /*
+     * Expected outputs:
+     *
+     * Test 1:
+     * Result: 13.00
+     *
+     * Test 2:
+     * Error: Division by zero
+     *
+     * Test 3:
+     * Error: Unknown operator '^'
+     */
+
+    public static void main(String[] args)  {
+        Logger log = LoggerFactory.getLogger(Main.class);
+        Scanner scanner = new Scanner(System.in);
 
         log.info("=== SmartCalculator ===");
         log.info("Type 'exit' to quit.");
@@ -20,7 +31,7 @@ public class Main {
 
             log.info("Enter first number (or 'exit'): ");
 
-            String input = br.readLine().trim();
+            String input = scanner.nextLine().trim();
 
             if (input.equalsIgnoreCase("exit")){ break; }
 
@@ -29,12 +40,12 @@ public class Main {
             try {
                 firstNum = Double.parseDouble(input);
             } catch (NumberFormatException e) {
-                log.warn("Invalid number. Please enter a valid number.");
+                log.warn("Error : Invalid number");
                 continue;
             }
 
             log.info("Enter operator (+ - * / %): ");
-            String op = br.readLine().trim();
+            String op = scanner.nextLine().trim();
 
             if (!op.equals("+") &&
                     !op.equals("-") &&
@@ -42,7 +53,7 @@ public class Main {
                     !op.equals("/") &&
                     !op.equals("%")) {
 
-                log.info("Error : Invalid operator");
+                log.info("Error : Unknown operator");
                 continue;
             }
 
@@ -50,7 +61,7 @@ public class Main {
             double secondNum;
 
             try {
-                secondNum = Double.parseDouble(br.readLine().trim());
+                secondNum = Double.parseDouble(scanner.nextLine().trim());
             } catch (NumberFormatException e) {
                 log.warn("Invalid number. Please enter a valid number.");
                 continue;
@@ -73,11 +84,8 @@ public class Main {
                         Double.NaN; }
             };
             if (!Double.isNaN(result))
-                log.info( "Calculation performed: {} {} {} = {}", firstNum, op, secondNum, result );
+                log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
         }
         log.info("Goodbye!");
     }
 }
-
-
-
