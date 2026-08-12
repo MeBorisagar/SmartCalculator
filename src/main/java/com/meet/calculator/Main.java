@@ -57,21 +57,13 @@ public class Main {
             }
 
 
-            double result = switch (op) {
-                case "+" -> firstNum + secondNum;
-                case "-" -> firstNum - secondNum;
-                case "*" -> firstNum * secondNum;
-                case "/" -> {
-                    if (secondNum == 0) {
-                        log.info("Error: division by zero");
-                        yield Double.NaN;
-                    }
-                    else yield firstNum / secondNum;
-                }
-                case "%" -> firstNum % secondNum;
-                default -> { log.info("Unknown operator"); yield
-                        Double.NaN; }
-            };
+            Operation operation = new Operation(
+                    firstNum,
+                    op,
+                    secondNum
+            );
+
+            double result = Calculator.calculate(operation);
             if (!Double.isNaN(result))
                 log.info( "Calculation performed: {} {} {} = {}", firstNum, op, secondNum, result );
         }
