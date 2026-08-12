@@ -1,10 +1,13 @@
 package com.meet.calculator;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Calculator {
 
 
-    public double calculate(Operation operation) {
-
+    public static double calculate(Operation operation) {
+        Logger log = LoggerFactory.getLogger(Calculator.class);
         double firstNum = operation.getFirstNum();
         double secondNum = operation.getSecondNum();
         String operator = operation.getOperator();
@@ -15,6 +18,7 @@ public class Calculator {
             case "*" -> firstNum * secondNum;
             case "/" -> {
                 if (secondNum == 0) {
+                    log.warn("Error : Division by zero");
                     yield Double.NaN;
                 }
                 yield firstNum / secondNum;
