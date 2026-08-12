@@ -12,7 +12,7 @@ public class Operation {
         this.secondNum = secondNum;
     }
 
-    public double getA() {
+    public double getFirstNum() {
         return firstNum;
     }
 
@@ -20,7 +20,7 @@ public class Operation {
         return operator;
     }
 
-    public double getB() {
+    public double getSecondNum() {
         return secondNum;
     }
 }
