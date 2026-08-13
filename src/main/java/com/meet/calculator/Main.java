@@ -29,7 +29,7 @@ public class Main {
             try {
                 firstNum = Double.parseDouble(input);
             } catch (NumberFormatException e) {
-                log.warn("Invalid number. Please enter a valid number.");
+                log.warn("Invalid number. Please enter a valid firstNum.");
                 continue;
             }
 
@@ -52,7 +52,7 @@ public class Main {
             try {
                 secondNum = Double.parseDouble(br.readLine().trim());
             } catch (NumberFormatException e) {
-                log.warn("Invalid number. Please enter a valid number.");
+                log.warn("Invalid number. Please enter a valid secondNum.");
                 continue;
             }
 
