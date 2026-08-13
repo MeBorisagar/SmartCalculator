@@ -14,7 +14,7 @@ public class Calculator {
      * Calculates the result of the given operation.
      *
      * @param operation the operation to perform
-     * @return the calculated result, or {@link Double#NaN} if the operation is invalid
+     * @return the calculated result, or Nan if the operation is invalid
      */
     public static double calculate(Operation operation) {
         Logger log = LoggerFactory.getLogger(Calculator.class);
