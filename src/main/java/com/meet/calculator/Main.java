@@ -29,7 +29,7 @@ public class Main {
       try {
         firstNum = Double.parseDouble(input);
       } catch (NumberFormatException e) {
-        log.warn("Invalid number. Please enter a valid firstNum.");
+        log.warn("Invalid number. Please enter a valid First Number.");
         continue;
       }
 
@@ -52,7 +52,7 @@ public class Main {
       try {
         secondNum = Double.parseDouble(br.readLine().trim());
       } catch (NumberFormatException e) {
-        log.warn("Invalid number. Please enter a valid secondNum.");
+        log.warn("Invalid number. Please enter a valid Second Number.");
         continue;
       }
 
@@ -60,7 +60,7 @@ public class Main {
 
       double result = Calculator.calculate(operation);
       if (!Double.isNaN(result))
-        log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, result);
+        log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
     }
     log.info("Goodbye!");
   }
