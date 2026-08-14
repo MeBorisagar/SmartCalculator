@@ -60,7 +60,23 @@ public class BankAccount {
 
     }
 
-   public void deposit(double amount){
+    public BankAccount(String accountNumber, String holderName) {
+
+        if(accountNumber == null || accountNumber.isBlank()){
+            throw new IllegalArgumentException("Account number cannot be empty");
+        }
+
+        if(holderName == null || holderName.isBlank()){
+            throw new IllegalArgumentException("Holder Name cannot be empty");
+        }
+
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        this.balance = 0.0;
+        this.transactionCount = 0;
+    }
+
+    public void deposit(double amount){
 
         if(amount <= 0){
             log.info("Invalid Deposit : amount must be greater than Zero");

@@ -12,12 +12,14 @@ public class Demo {
         Logger log = LoggerFactory.getLogger(Demo.class);
 
         BankAccount account1 =
-                new BankAccount("1001", "Meet", 5000);
+                new BankAccount("1001", "Meet");
 
         BankAccount account2 =
                 new BankAccount("1002", "Rahul", 3000);
 
         log.info("-----Account 1-----");
+
+        log.info("{}",account1);
 
         account1.deposit(2000);
         account1.withdraw(1000);
@@ -30,6 +32,8 @@ public class Demo {
 
 
        log.info("-----Account 2-----");
+
+        log.info("{}",account2);
 
         account2.deposit(1500);
         account2.withdraw(500);
