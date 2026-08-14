@@ -4,9 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.naveen</groupId>
-  <artifactId>class-training</artifactId>
+  <groupId>com.meet</groupId>
+  <artifactId>SmartCalculator</artifactId>
   <version>1.0-SNAPSHOT</version>
+
+  <name>smartcalculator</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
@@ -79,34 +84,7 @@
       <build>
         <plugins>
           <!-- Checkstyle -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.1.2</version>
-            <dependencies>
-              <dependency>
-                <groupId>com.puppycrawl.tools</groupId>
-                <artifactId>checkstyle</artifactId>
-                <version>10.12.0</version>
-              </dependency>
-            </dependencies>
-            <executions>
-              <execution>
-                <id>validate</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <!-- Use Google's checks as an example; replace with your checkstyle.xml if you have one -->
-              <configLocation>google_checks.xml</configLocation>
-              <encoding>${project.build.sourceEncoding}</encoding>
-              <consoleOutput>true</consoleOutput>
-              <failsOnError>true</failsOnError>
-            </configuration>
-          </plugin>
+
 
           <!-- Formatter (example provided) -->
           <plugin>
