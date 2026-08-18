@@ -14,6 +14,8 @@ public class Main {
     log.info("=== SmartCalculator ===");
     log.info("Type 'exit' to quit.");
 
+    Operation operation = new Operation();
+
     while (true) {
 
       log.info("Enter first number (or 'exit'): ");
@@ -56,7 +58,9 @@ public class Main {
         continue;
       }
 
-      Operation operation = new Operation(firstNum, op, secondNum);
+      operation.setFirstNum(firstNum);
+      operation.setOperator(op);
+      operation.setSecondNum(secondNum);
 
       double result = Calculator.calculate(operation);
       if (!Double.isNaN(result))

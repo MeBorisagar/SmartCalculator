@@ -20,6 +20,12 @@ public class Operation {
     this.secondNum = secondNum;
   }
 
+  public Operation(){
+    this.firstNum = 0;
+    this.operator = null;
+    this.secondNum = 0;
+  }
+
   /**
    * Returns the first operand.
    *
@@ -45,5 +51,18 @@ public class Operation {
    */
   public double getSecondNum() {
     return secondNum;
+  }
+
+
+  public void setFirstNum(double firstNum) {
+    this.firstNum = firstNum;
+  }
+
+  public void setOperator(String operator) {
+    this.operator = operator;
+  }
+
+  public void setSecondNum(double secondNum) {
+    this.secondNum = secondNum;
   }
 }
