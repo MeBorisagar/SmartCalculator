@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 /** Performs mathematical calculations for the Smart Calculator. */
 public class Calculator {
 
+  public static Logger log = LoggerFactory.getLogger(Calculator.class);
   /**
    * Calculates the result of the given operation.
    *
@@ -13,7 +14,7 @@ public class Calculator {
    * @return the calculated result, or Nan if the operation is invalid
    */
   public static double calculate(Operation operation) {
-    Logger log = LoggerFactory.getLogger(Calculator.class);
+
     double firstNum = operation.getFirstNum();
     double secondNum = operation.getSecondNum();
     String operator = operation.getOperator();
@@ -29,7 +30,13 @@ public class Calculator {
         }
         yield firstNum / secondNum;
       }
-      case "%" -> firstNum % secondNum;
+      case "%" ->  {
+        if (secondNum == 0) {
+          log.warn("Error : Modulo by zero");
+          yield Double.NaN;
+        }
+        yield firstNum % secondNum;
+      }
       default -> Double.NaN;
     };
   }
