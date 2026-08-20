@@ -62,15 +62,15 @@ Direct development on main should be avoided.
 
 **Status:** In Development
 
-| Phase | Branch | Description | Status |
-|---|---|---|---|
-| Week 1 | `dev` | Project setup and Maven configuration | Completed |
-| Week 2 | `docs/srs` | Requirements analysis and design documentation | Completed |
-| Week 3 | `feature/basic_CLI_loop` | Basic calculator CLI loop | Completed |
-| Week 4 | — | OOP structure and code hygiene | Planned |
-| Week 5 | — | OOP pillars and polymorphism | Planned |
-| Week 6 | — | Robustness and code review | Planned |
-| Week 7 | — | Logic, algorithms and debugging | Planned |
-| Week 8 | — | Static web UI and web awareness | Planned |
+| Phase | Branch                     | Description | Status    |
+|---|----------------------------|---|-----------|
+| Week 1 | `dev`                      | Project setup and Maven configuration | Completed |
+| Week 2 | `docs/srs`                 | Requirements analysis and design documentation | Completed |
+| Week 3 | `feature/basic_CLI_loop`   | Basic calculator CLI loop | Completed |
+| Week 4 | `feature/w4_OOP_Structure` | OOP structure and code hygiene | Completed |
+| Week 5 | —                          | OOP pillars and polymorphism | Planned   |
+| Week 6 | —                          | Robustness and code review | Planned   |
+| Week 7 | —                          | Logic, algorithms and debugging | Planned   |
+| Week 8 | —                          | Static web UI and web awareness | Planned   |
 
 ---
