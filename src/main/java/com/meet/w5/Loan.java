@@ -17,5 +17,8 @@ public abstract class Loan {
 
     public abstract String loanType();
 
+    public void printSummary() {
+        System.out.printf("Loan ID: %s | Applicant Name: %s | Loan Type: %s | Principal: %.2f | Annual Rate: %.2f%% | EMI: %.2f%n", loanId, applicantName, loanType(), principal, annualRate, calculateEMI());
+    }
 
 }
