@@ -1,83 +1,71 @@
 package com.meet.calculator;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-         Logger log = LoggerFactory.getLogger(Main.class);
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  public static void main(String[] args) throws IOException {
+    Logger log = LoggerFactory.getLogger(Main.class);
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        log.info("=== SmartCalculator ===");
-        log.info("Type 'exit' to quit.");
+    log.info("=== SmartCalculator ===");
+    log.info("Type 'exit' to quit.");
 
-        while(true){
+    Operation operation = new Operation();
 
-            log.info("Enter first number (or 'exit'): ");
+    while (true) {
 
-            String input = br.readLine().trim();
+      log.info("Enter first number (or 'exit'): ");
 
-            if (input.equalsIgnoreCase("exit")){ break; }
+      String input = br.readLine().trim();
 
-            double firstNum;
+      if (input.equalsIgnoreCase("exit")) {
+        break;
+      }
 
-            try {
-                firstNum = Double.parseDouble(input);
-            } catch (NumberFormatException e) {
-                log.warn("Invalid number. Please enter a valid number.");
-                continue;
-            }
+      double firstNum;
 
-            log.info("Enter operator (+ - * / %): ");
-            String op = br.readLine().trim();
+      try {
+        firstNum = Double.parseDouble(input);
+      } catch (NumberFormatException e) {
+        log.warn("Invalid number. Please enter a valid First Number.");
+        continue;
+      }
 
-            if (!op.equals("+") &&
-                    !op.equals("-") &&
-                    !op.equals("*") &&
-                    !op.equals("/") &&
-                    !op.equals("%")) {
+      log.info("Enter operator (+ - * / %): ");
+      String op = br.readLine().trim();
 
-                log.info("Invalid operator. Please try again.");
-                continue;
-            }
+      if (!op.equals("+")
+          && !op.equals("-")
+          && !op.equals("*")
+          && !op.equals("/")
+          && !op.equals("%")) {
 
-            log.info("Enter second number: ");
-            double secondNum;
+        log.info("Invalid operator. Please try again.");
+        continue;
+      }
 
-            try {
-                secondNum = Double.parseDouble(br.readLine().trim());
-            } catch (NumberFormatException e) {
-                log.warn("Invalid number. Please enter a valid number.");
-                continue;
-            }
+      log.info("Enter second number: ");
+      double secondNum;
 
+      try {
+        secondNum = Double.parseDouble(br.readLine().trim());
+      } catch (NumberFormatException e) {
+        log.warn("Invalid number. Please enter a valid Second Number.");
+        continue;
+      }
 
-            double result = switch (op) {
-                case "+" -> firstNum + secondNum;
-                case "-" -> firstNum - secondNum;
-                case "*" -> firstNum * secondNum;
-                case "/" -> {
-                    if (secondNum == 0) {
-                        log.info("Error: division by zero");
-                        yield Double.NaN;
-                    }
-                    else yield firstNum / secondNum;
-                }
-                case "%" -> firstNum % secondNum;
-                default -> { log.info("Unknown operator"); yield
-                        Double.NaN; }
-            };
-            if (!Double.isNaN(result))
-                log.info( "Calculation performed: {} {} {} = {}", firstNum, op, secondNum, result );
-        }
-        log.info("Goodbye!");
+      operation.setFirstNum(firstNum);
+      operation.setOperator(op);
+      operation.setSecondNum(secondNum);
+
+      double result = Calculator.calculate(operation);
+      if (!Double.isNaN(result))
+        log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
     }
+    log.info("Goodbye!");
+  }
 }
-
-
-
