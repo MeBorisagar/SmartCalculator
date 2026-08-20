@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /** Performs mathematical calculations for the Smart Calculator. */
 public class Calculator {
 
-  public static Logger log = LoggerFactory.getLogger(Calculator.class);
+  public static Logger LOG = LoggerFactory.getLogger(Calculator.class);
   /**
    * Calculates the result of the given operation.
    *
@@ -25,14 +25,14 @@ public class Calculator {
       case "*" -> firstNum * secondNum;
       case "/" -> {
         if (secondNum == 0) {
-          log.warn("Error : Division by zero");
+          LOG.warn("Error : Division by zero");
           yield Double.NaN;
         }
         yield firstNum / secondNum;
       }
       case "%" ->  {
         if (secondNum == 0) {
-          log.warn("Error : Modulo by zero");
+          LOG.warn("Error : Modulo by zero");
           yield Double.NaN;
         }
         yield firstNum % secondNum;
@@ -48,6 +48,10 @@ public class Calculator {
    * @return the square root of the given number
    */
   public static double squareRoot(double number) {
+    if(number<0){
+      LOG.info("Enter Positive Number for square root.");
+      return Double.NaN;
+    }
     return Math.sqrt(number);
   }
 
