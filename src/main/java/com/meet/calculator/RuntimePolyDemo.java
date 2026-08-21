@@ -10,25 +10,16 @@ public class RuntimePolyDemo {
 
     private static void demoPolymorphism() {
 
-        List<Calculable> operations = List.of(
-                new Addition(10, 4),
-                new Subtraction(10, 4),
-                new Multiplication(10, 4),
-                new Division(10, 4),
-                new Modulus(10,4),
-                new Division(10,0),
-                new Modulus(10,0)
-        );
+        List<Calculable> operations = List.of(new Addition(10, 4), new Subtraction(10, 4), new Multiplication(10, 4), new Division(10, 4), new Modulus(10, 4), new Division(10, 0), new Modulus(10, 0));
 
         for (Calculable operation : operations) {
             log.info("{}", operation);
         }
     }
 
-    public static void  main(String[] args){
+    public static void main(String[] args) {
 
         demoPolymorphism();
-
 
 
     }

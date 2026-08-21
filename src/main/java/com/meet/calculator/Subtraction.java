@@ -3,7 +3,7 @@ package com.meet.calculator;
 /**
  * Represents a subtraction operation.
  */
-public class Subtraction extends Operation implements Calculable{
+public class Subtraction extends Operation implements Calculable {
 
 
     public Subtraction(double firstNum, double secondNum) {
@@ -18,7 +18,7 @@ public class Subtraction extends Operation implements Calculable{
     @Override
     public double calculate() {
         double result = getFirstNum() - getSecondNum();
-        return Math.round(result * 100.0)/100.0;
+        return Math.round(result * 100.0) / 100.0;
     }
 
     /**

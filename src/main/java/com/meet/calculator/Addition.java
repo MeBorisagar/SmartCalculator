@@ -15,9 +15,9 @@ public class Addition extends Operation implements Calculable {
      * @return the sum of the two operands
      */
     @Override
-    public double calculate(){
+    public double calculate() {
         double result = getFirstNum() + getSecondNum();
-        return Math.round(result * 100.0)/100.0;
+        return Math.round(result * 100.0) / 100.0;
     }
 
     /**

@@ -18,7 +18,7 @@ public class Multiplication extends Operation implements Calculable {
     @Override
     public double calculate() {
         double result = getFirstNum() * getSecondNum();
-        return Math.round(result * 100.0)/100.0;
+        return Math.round(result * 100.0) / 100.0;
     }
 
     /**

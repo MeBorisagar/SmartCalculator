@@ -19,21 +19,21 @@ public class Division extends Operation implements Calculable {
      * Divides the first operand by the second operand.
      *
      * @return the quotient rounded to two decimal places,
-     *         or NaN when the second operand is zero
+     * or NaN when the second operand is zero
      */
     @Override
     public double calculate() {
         double firstNumber = getFirstNum();
         double secondNumber = getSecondNum();
 
-        if(secondNumber == 0){
+        if (secondNumber == 0) {
             log.warn("Error : Division by zero");
             return Double.NaN;
         }
 
-        double result = firstNumber/secondNumber;
+        double result = firstNumber / secondNumber;
 
-        return Math.round(result * 100.0)/100.0;
+        return Math.round(result * 100.0) / 100.0;
     }
 
     /**
@@ -46,8 +46,8 @@ public class Division extends Operation implements Calculable {
         double firstNumber = getFirstNum();
         double secondNumber = getSecondNum();
         double result = calculate();
-        if(Double.isNaN(result)){
-            return "Division with zero " + firstNumber + " / " + secondNumber+ " not possible";
+        if (Double.isNaN(result)) {
+            return "Division with zero " + firstNumber + " / " + secondNumber + " not possible";
         }
         return "Division: " + firstNumber + " / " + secondNumber + " = " + result;
     }
