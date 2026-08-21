@@ -1,6 +1,9 @@
 package com.meet.calculator;
 
-/** Represents a mathematical operation with two operands and an operator. */
+/**
+ * Represents the base class for mathematical operations.
+ * Stores the two operands used by a calculation.
+ */
 public abstract  class Operation {
 
   private final double firstNum;
@@ -19,6 +22,10 @@ public abstract  class Operation {
     return secondNum;
   }
 
-
+  /**
+   * Calculates the result of the operation.
+   *
+   * @return the calculated result
+   */
   public abstract double calculate();
 }
