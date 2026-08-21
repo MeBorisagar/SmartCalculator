@@ -57,7 +57,7 @@ public class Main {
         continue;
       }
 
-      Calculable result = switch (op) {
+      Calculable resultObj = switch (op) {
         case "+" -> new Addition(firstNum, secondNum);
         case "-" -> new Subtraction(firstNum, secondNum);
         case "*" -> new Multiplication(firstNum, secondNum);
@@ -66,10 +66,14 @@ public class Main {
         default -> null;
       };
 
-      log.info("{}", result);
+      double result = resultObj.calculate();
 
-
+      if (!Double.isNaN(result))
+        log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
     }
+
+
+
     log.info("Goodbye!");
   }
 }
