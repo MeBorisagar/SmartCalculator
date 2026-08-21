@@ -14,7 +14,6 @@ public class Main {
     log.info("=== SmartCalculator ===");
     log.info("Type 'exit' to quit.");
 
-    Operation operation = new Operation();
 
     while (true) {
 
@@ -39,10 +38,10 @@ public class Main {
       String op = br.readLine().trim();
 
       if (!op.equals("+")
-          && !op.equals("-")
-          && !op.equals("*")
-          && !op.equals("/")
-          && !op.equals("%")) {
+              && !op.equals("-")
+              && !op.equals("*")
+              && !op.equals("/")
+              && !op.equals("%")) {
 
         log.info("Invalid operator. Please try again.");
         continue;
@@ -58,13 +57,18 @@ public class Main {
         continue;
       }
 
-      operation.setFirstNum(firstNum);
-      operation.setOperator(op);
-      operation.setSecondNum(secondNum);
+      Calculable result = switch (op) {
+        case "+" -> new Addition(firstNum, secondNum);
+        case "-" -> new Subtraction(firstNum, secondNum);
+        case "*" -> new Multiplication(firstNum, secondNum);
+        case "/" -> new Division(firstNum, secondNum);
+        case "%" -> new Modulus(firstNum, secondNum);
+        default -> null;
+      };
 
-      double result = Calculator.calculate(operation);
-      if (!Double.isNaN(result))
-        log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
+      log.info("{}", result);
+
+
     }
     log.info("Goodbye!");
   }
