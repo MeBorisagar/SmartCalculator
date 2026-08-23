@@ -21,4 +21,20 @@ public abstract class Loan {
         System.out.printf("Loan ID: %s | Applicant Name: %s | Loan Type: %s | Principal: %.2f | Annual Rate: %.2f%% | EMI: %.2f%n", loanId, applicantName, loanType(), principal, annualRate, calculateEMI());
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Loan other)) {
+            return false;
+        }
+        return loanId != null && other.loanId != null && loanId.equalsIgnoreCase(other.loanId);
+    }
+
+    @Override
+    public int hashCode() {
+        return loanId == null ? 0 : loanId.toLowerCase().hashCode();
+    }
+
 }

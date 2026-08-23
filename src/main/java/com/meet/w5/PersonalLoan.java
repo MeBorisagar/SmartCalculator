@@ -1,6 +1,6 @@
 package com.meet.w5;
 
-public class PersonalLoan extends Loan{
+public class PersonalLoan extends Loan implements Exportable{
 
     private final int tenureMonths;
 
@@ -19,5 +19,10 @@ public class PersonalLoan extends Loan{
     @Override
     public String loanType() {
         return "Personal Loan";
+    }
+
+    @Override
+    public String toCSVRow() {
+        return loanId+ "," + applicantName + "," + principal + "," + annualRate+ "," + this.tenureMonths + "," + calculateEMI();
     }
 }

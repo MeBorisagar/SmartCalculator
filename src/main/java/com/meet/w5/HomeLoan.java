@@ -1,6 +1,6 @@
 package com.meet.w5;
 
-public class HomeLoan extends Loan{
+public class HomeLoan extends Loan implements Auditable{
 
     private final int tenureMonths;
 
@@ -21,5 +21,11 @@ public class HomeLoan extends Loan{
     @Override
     public String loanType() {
         return "Home Loan";
+    }
+
+
+    @Override
+    public String auditSummary() {
+        return auditPrefix() + loanId + " | " + applicantName + " | Rs." + principal + " | Rate:" + annualRate + "%";
     }
 }
