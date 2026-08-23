@@ -6,20 +6,32 @@ package com.meet.calculator;
  */
 public abstract class Operation {
 
-    private final double firstNum;
-    private final double secondNum;
+    private  double firstNum;
+    private  double secondNum;
 
     protected Operation(double firstNum, double secondNum) {
         this.firstNum = firstNum;
         this.secondNum = secondNum;
     }
 
-    public double getFirstNum() {
+    protected Operation(double firstNum){
+        this(firstNum,0);
+    }
+
+    protected double getFirstNum() {
         return firstNum;
     }
 
-    public double getSecondNum() {
+    protected double getSecondNum() {
         return secondNum;
+    }
+
+    protected void setFirstNum(double firstNum) {
+        this.firstNum = firstNum;
+    }
+
+    protected void setSecondNum(double secondNum) {
+        this.secondNum = secondNum;
     }
 
     /**
