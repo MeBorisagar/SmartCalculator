@@ -1,4 +1,7 @@
-package com.meet.calculator;
+package com.meet.calculator.operations;
+
+import com.meet.calculator.Calculable;
+import com.meet.calculator.Operation;
 
 /**
  * Represents an addition operation.

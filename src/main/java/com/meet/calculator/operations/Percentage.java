@@ -1,9 +1,11 @@
-package com.meet.calculator;
+package com.meet.calculator.operations;
 
+import com.meet.calculator.Calculable;
+import com.meet.calculator.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Percentage extends Operation implements Calculable{
+public class Percentage extends Operation implements Calculable {
 
     private static final Logger log = LoggerFactory.getLogger(Percentage.class);
 

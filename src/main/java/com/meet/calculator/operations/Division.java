@@ -1,5 +1,7 @@
-package com.meet.calculator;
+package com.meet.calculator.operations;
 
+import com.meet.calculator.Calculable;
+import com.meet.calculator.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

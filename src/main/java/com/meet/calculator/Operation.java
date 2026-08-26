@@ -6,8 +6,8 @@ package com.meet.calculator;
  */
 public abstract class Operation {
 
-    private  double firstNum;
-    private  double secondNum;
+    private final double firstNum;
+    private final double secondNum;
 
     protected Operation(double firstNum, double secondNum) {
         this.firstNum = firstNum;
@@ -26,13 +26,6 @@ public abstract class Operation {
         return secondNum;
     }
 
-    protected void setFirstNum(double firstNum) {
-        this.firstNum = firstNum;
-    }
-
-    protected void setSecondNum(double secondNum) {
-        this.secondNum = secondNum;
-    }
 
     /**
      * Calculates the result of the operation.
