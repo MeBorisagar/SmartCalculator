@@ -1,68 +1,36 @@
 package com.meet.calculator;
 
-/** Represents a mathematical operation with two operands and an operator. */
-public class Operation {
+/**
+ * Represents the base class for mathematical operations.
+ * Stores the two operands used by a calculation.
+ */
+public abstract class Operation {
 
-  private double firstNum;
-  private String operator;
-  private double secondNum;
+    private final double firstNum;
+    private final double secondNum;
 
-  /**
-   * Creates a new operation.
-   *
-   * @param firstNum the first operand
-   * @param operator the arithmetic operator
-   * @param secondNum the second operand
-   */
-  public Operation(double firstNum, String operator, double secondNum) {
-    this.firstNum = firstNum;
-    this.operator = operator;
-    this.secondNum = secondNum;
-  }
+    protected Operation(double firstNum, double secondNum) {
+        this.firstNum = firstNum;
+        this.secondNum = secondNum;
+    }
 
-  public Operation(){
-    this.firstNum = 0;
-    this.operator = null;
-    this.secondNum = 0;
-  }
+    protected Operation(double firstNum){
+        this(firstNum,0);
+    }
 
-  /**
-   * Returns the first operand.
-   *
-   * @return the first operand
-   */
-  public double getFirstNum() {
-    return firstNum;
-  }
+    protected double getFirstNum() {
+        return firstNum;
+    }
 
-  /**
-   * Returns the arithmetic operator.
-   *
-   * @return the operator
-   */
-  public String getOperator() {
-    return operator;
-  }
-
-  /**
-   * Returns the second operand.
-   *
-   * @return the second operand
-   */
-  public double getSecondNum() {
-    return secondNum;
-  }
+    protected double getSecondNum() {
+        return secondNum;
+    }
 
 
-  public void setFirstNum(double firstNum) {
-    this.firstNum = firstNum;
-  }
-
-  public void setOperator(String operator) {
-    this.operator = operator;
-  }
-
-  public void setSecondNum(double secondNum) {
-    this.secondNum = secondNum;
-  }
+    /**
+     * Calculates the result of the operation.
+     *
+     * @return the calculated result
+     */
+    public abstract double calculate();
 }

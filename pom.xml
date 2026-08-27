@@ -9,7 +9,6 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>smartcalculator</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
 
@@ -17,6 +16,12 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+      <sonar.projectKey>calculator</sonar.projectKey>
+      <sonar.projectName>Calculator</sonar.projectName>
+      <sonar.host.url>http://localhost:9000</sonar.host.url>
+      <sonar.exclusions>**/test/**</sonar.exclusions>
 
 
     <junit.version>5.12.2</junit.version>
@@ -71,6 +76,11 @@
       </plugin>
 
 
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.5.0.6356</version>
+      </plugin>
 
 
 
