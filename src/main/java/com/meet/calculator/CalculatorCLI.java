@@ -1,6 +1,5 @@
 package com.meet.calculator;
 
-import com.meet.calculator.operations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -75,7 +74,7 @@ public class CalculatorCLI {
             /*
              * Square root and percentage require only one operand.
              */
-            if (op.equals("sqrt") || op.equals("pct")) {
+            if (op.equals("sqrt") ) {
 
                 Calculable resultObj = operationSelector.createOperation(op,firstNum);
 

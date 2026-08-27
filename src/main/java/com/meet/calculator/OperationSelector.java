@@ -12,6 +12,7 @@ public class OperationSelector {
             case "*" -> new Multiplication(firstNum, secondNum);
             case "/" -> new Division(firstNum, secondNum);
             case "%" -> new Modulus(firstNum, secondNum);
+            case "pct" -> new Percentage(firstNum, secondNum);
             default -> throw new IllegalArgumentException(
                     "Unsupported operator: " + operator);
         };
@@ -21,7 +22,6 @@ public class OperationSelector {
 
         return switch (operator) {
             case "sqrt" -> new SquareRoot(number);
-            case "pct" -> new Percentage(number);
             default -> throw new IllegalArgumentException(
                     "Unsupported operator: " + operator);
         };
