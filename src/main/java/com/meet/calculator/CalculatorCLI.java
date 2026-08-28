@@ -1,5 +1,6 @@
 package com.meet.calculator;
 
+import com.meet.calculator.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,9 +42,15 @@ public class CalculatorCLI {
             String input = readInput(
                     "Enter first number (or 'exit'): ");
 
-            if (input == null) {
-                break;
-            }
+           if(input==null){
+               try{
+                   throw new NullPointerException("Input cannot be null.");
+               }
+               catch(NullPointerException npe){
+                   log.error("{}",npe.getMessage());
+                   continue;
+               }
+           }
 
             if (input.equalsIgnoreCase("exit")) {
                 break;
@@ -54,8 +61,7 @@ public class CalculatorCLI {
             try {
                 firstNum = Double.parseDouble(input);
             } catch (NumberFormatException e) {
-                log.warn(
-                        "Invalid number. Please enter a valid First Number.");
+                log.error("Invalid number. Please enter a valid First Number.");
                 continue;
             }
 
@@ -67,21 +73,23 @@ public class CalculatorCLI {
             }
 
             if (!isValidOperator(op)) {
-                log.warn("Invalid operator. Please try again.");
                 continue;
             }
 
             /*
              * Square root and percentage require only one operand.
              */
-            if (op.equals("sqrt") ) {
+            if (op.equals("sqrt")) {
 
-                Calculable resultObj = operationSelector.createOperation(op,firstNum);
+                try {
+                    Calculable resultObj = operationSelector.createOperation(op, firstNum);
 
-                double result = resultObj.calculate();
+                    double result = resultObj.calculate();
 
-                if (!Double.isNaN(result)) {
                     log.info("Calculation performed: {} {} = {}", firstNum, op, String.format("%.2f", result));
+
+                } catch (NegativeSquareRootException e) {
+                    log.warn(e.getMessage());
                 }
 
                 continue;
@@ -98,18 +106,22 @@ public class CalculatorCLI {
             try {
                 secondNum = Double.parseDouble(secondInput);
             } catch (NumberFormatException e) {
-                log.warn(
-                        "Invalid number. Please enter a valid Second Number.");
+                log.error("Invalid number. Please enter a valid Second Number.");
                 continue;
             }
 
-            Calculable resultObj = operationSelector.createOperation(op, firstNum, secondNum);
+            try {
+                Calculable resultObj = operationSelector.createOperation(op, firstNum, secondNum);
 
-            double result = resultObj.calculate();
+                double result = resultObj.calculate();
 
-            if (!Double.isNaN(result)) {
                 log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
+
+            } catch (DivisionByZeroException | ModuloByZeroException e) {
+                log.warn(e.getMessage());
+
             }
+
         }
 
         log.info("Goodbye!");
@@ -139,13 +151,23 @@ public class CalculatorCLI {
      * @return true if the operator is supported
      */
     private boolean isValidOperator(String operator) {
-        return operator.equals("+")
+        boolean isValid = operator.equals("+")
                 || operator.equals("-")
                 || operator.equals("*")
                 || operator.equals("/")
                 || operator.equals("%")
                 || operator.equals("sqrt")
                 || operator.equals("pct");
+
+        if(!isValid){
+            try{
+                throw new InvalidOperationException("Invalid Operation " + operator + ". Please enter valid Operator.");
+            } catch (InvalidOperationException ioe) {
+                log.error("{}", ioe.getMessage());
+            }
+
+        }
+        return isValid;
     }
 
 

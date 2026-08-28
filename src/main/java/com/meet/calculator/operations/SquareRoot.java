@@ -2,11 +2,11 @@ package com.meet.calculator.operations;
 
 import com.meet.calculator.Calculable;
 import com.meet.calculator.Operation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.meet.calculator.exceptions.NegativeSquareRootException;
+
 
 public class SquareRoot extends Operation implements Calculable {
-    private static final Logger log = LoggerFactory.getLogger(SquareRoot.class);
+
 
     public SquareRoot(double firstNum) {
         super(firstNum);
@@ -16,7 +16,7 @@ public class SquareRoot extends Operation implements Calculable {
      * Gives Square Root of number.
      *
      * @return the Square Root rounded to two decimal places,
-     * or NaN when the  operand is negative.
+     * @throws NegativeSquareRootException if the  operand is negative
      */
     @Override
     public double calculate() {
@@ -24,8 +24,7 @@ public class SquareRoot extends Operation implements Calculable {
 
 
         if (firstNumber < 0) {
-            log.warn("Error : Enter Positive Number for square root.");
-            return Double.NaN;
+            throw new NegativeSquareRootException();
         }
 
         double result = Math.sqrt(firstNumber);
@@ -41,10 +40,14 @@ public class SquareRoot extends Operation implements Calculable {
     @Override
     public String toString() {
         double firstNumber = getFirstNum();
-        double result = calculate();
-        if (Double.isNaN(result)) {
+
+        try {
+            double result = calculate();
+
+            return "Square Root: sqrt(" + firstNumber + ") = " + result;
+
+        } catch (NegativeSquareRootException exception) {
             return "Square Root with negative " + firstNumber + " not possible";
         }
-        return "Square Root: " + "sqrt("+firstNumber+")" + " = " + result;
     }
 }

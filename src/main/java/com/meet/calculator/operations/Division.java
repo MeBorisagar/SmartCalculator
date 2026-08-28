@@ -2,26 +2,24 @@ package com.meet.calculator.operations;
 
 import com.meet.calculator.Calculable;
 import com.meet.calculator.Operation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.meet.calculator.exceptions.DivisionByZeroException;
 /**
  * Represents a division operation.
  */
 
 public class Division extends Operation implements Calculable {
 
-    private static final Logger log = LoggerFactory.getLogger(Division.class);
 
     public Division(double firstNum, double secondNum) {
         super(firstNum, secondNum);
     }
 
     /**
-     * Divides the first operand by the second operand.
+     * Divides the first operand by the second operand using BigDecimal
+     * for improved decimal precision.
      *
-     * @return the quotient rounded to two decimal places,
-     * or NaN when the second operand is zero
+     * @return the quotient rounded to ten decimal places
+     * @throws DivisionByZeroException if the second operand is zero
      */
     @Override
     public double calculate() {
@@ -29,8 +27,7 @@ public class Division extends Operation implements Calculable {
         double secondNumber = getSecondNum();
 
         if (secondNumber == 0) {
-            log.warn("Error : Division by zero");
-            return Double.NaN;
+            throw new DivisionByZeroException();
         }
 
         double result = firstNumber / secondNumber;
@@ -47,10 +44,14 @@ public class Division extends Operation implements Calculable {
     public String toString() {
         double firstNumber = getFirstNum();
         double secondNumber = getSecondNum();
-        double result = calculate();
-        if (Double.isNaN(result)) {
+
+        try {
+            double result = calculate();
+
+            return "Division: " + firstNumber + " / " + secondNumber + " = " + result;
+
+        } catch (DivisionByZeroException exception) {
             return "Division with zero " + firstNumber + " / " + secondNumber + " not possible";
         }
-        return "Division: " + firstNumber + " / " + secondNumber + " = " + result;
     }
 }
