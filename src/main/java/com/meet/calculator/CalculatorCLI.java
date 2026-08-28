@@ -39,8 +39,7 @@ public class CalculatorCLI {
 
         while (true) {
 
-            String input = readInput(
-                    "Enter first number (or 'exit'): ");
+            String input = readInput("Enter first number (or 'exit'): ");
 
            if(input==null){
                try{

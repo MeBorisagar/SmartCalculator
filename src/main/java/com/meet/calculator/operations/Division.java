@@ -3,6 +3,9 @@ package com.meet.calculator.operations;
 import com.meet.calculator.Calculable;
 import com.meet.calculator.Operation;
 import com.meet.calculator.exceptions.DivisionByZeroException;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 /**
  * Represents a division operation.
  */
@@ -30,9 +33,10 @@ public class Division extends Operation implements Calculable {
             throw new DivisionByZeroException();
         }
 
-        double result = firstNumber / secondNumber;
+        BigDecimal bdA = BigDecimal.valueOf(firstNumber);
+        BigDecimal bdB = BigDecimal.valueOf(secondNumber);
 
-        return Math.round(result * 100.0) / 100.0;
+        return bdA.divide(bdB, 2, RoundingMode.HALF_UP).doubleValue();
     }
 
     /**
