@@ -64,10 +64,7 @@ public class CalculatorCLI {
         continue;
       }
 
-      /*
-       * Square root and percentage require only one operand.
-       */
-      if (op.equals("sqrt")) {
+      if (isUnary(op)) {
 
         try {
           Calculable resultObj = operationSelector.createOperation(op, firstNum);
@@ -161,5 +158,9 @@ public class CalculatorCLI {
       }
     }
     return isValid;
+  }
+
+  private boolean isUnary(String operator){
+      return operator.equals("sqrt");
   }
 }
