@@ -160,7 +160,7 @@ public class CalculatorCLI {
     return isValid;
   }
 
-  private boolean isUnary(String operator){
-      return operator.equals("sqrt");
+  private boolean isUnary(String operator) {
+    return operator.equals("sqrt");
   }
 }
