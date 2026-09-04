@@ -1,6 +1,8 @@
 ## Code Review 
 
 
+### Given Code
+
 ```java
 public void transfer(String from, String to, double amt) { 
     try { 
@@ -25,6 +27,8 @@ Floating-point arithmetic can introduce precision errors, which is unsafe for fi
 Fix :
 Use BigDecimal for the transfer amount and account balances.
 
+---
+
 ### 2) Repeated Map look-ups 
 Severity: Minor
 
@@ -35,6 +39,8 @@ Fix :
 Account fromAccount = accounts.get(from);
 Account toAccount = accounts.get(to);
 ```
+---
+
 ### 3) Transfer is not atomic
 Severity: Blocker
 
@@ -42,6 +48,7 @@ If the first update succeeds but the second update fails, money can be deducted 
 
 Fix : Perform the transfer as one atomic operation
 
+---
 
 ### 4) Catching Exception too broadly
 Severity: Major
@@ -49,6 +56,8 @@ Severity: Major
 The method catches the generic Exception type: catch (Exception e). This can hide many different programming and business errors, making the actual problem difficult to identify and debug.
 
 Fix : Catch only specific exceptions that the method can reasonably handle
+
+---
 
 ### 5) Silently ignoring the exception
 Severity: Major

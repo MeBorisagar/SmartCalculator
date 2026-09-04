@@ -10,11 +10,7 @@ public class LoanLedger {
     private final Map<String, String> accountLoans = new HashMap<>();
     private final Map<String, BigDecimal> accountBalances = new HashMap<>();
 
-    public void addLoan(
-            String loanId,
-            BigDecimal amount,
-            String accountId,
-            BigDecimal balance) {
+    public void addLoan(String loanId, BigDecimal amount, String accountId, BigDecimal balance) {
 
         loans.put(loanId, amount);
         accountLoans.put(accountId, loanId);
