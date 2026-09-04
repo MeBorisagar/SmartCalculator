@@ -2,49 +2,49 @@ package com.meet.calculator.operations;
 
 import com.meet.calculator.Calculable;
 import com.meet.calculator.Operation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.meet.calculator.exceptions.NegativeSquareRootException;
 
 public class SquareRoot extends Operation implements Calculable {
-    private static final Logger log = LoggerFactory.getLogger(SquareRoot.class);
 
-    public SquareRoot(double firstNum) {
-        super(firstNum);
+  public SquareRoot(double firstNum) {
+    super(firstNum);
+  }
+
+  /**
+   * Gives Square Root of number.
+   *
+   * @return the Square Root rounded to two decimal places,
+   * @throws NegativeSquareRootException if the operand is negative
+   */
+  @Override
+  public double calculate() {
+    double firstNumber = getFirstNum();
+
+    if (firstNumber < 0) {
+      throw new NegativeSquareRootException();
     }
 
-    /**
-     * Gives Square Root of number.
-     *
-     * @return the Square Root rounded to two decimal places,
-     * or NaN when the  operand is negative.
-     */
-    @Override
-    public double calculate() {
-        double firstNumber = getFirstNum();
+    double result = Math.sqrt(firstNumber);
 
+    return Math.round(result * 100.0) / 100.0;
+  }
 
-        if (firstNumber < 0) {
-            log.warn("Error : Enter Positive Number for square root.");
-            return Double.NaN;
-        }
+  /**
+   * Returns a readable representation of the square root.
+   *
+   * @return the square root expression and its result
+   */
+  @Override
+  public String toString() {
+    double firstNumber = getFirstNum();
 
-        double result = Math.sqrt(firstNumber);
+    try {
+      double result = calculate();
 
-        return Math.round(result * 100.0) / 100.0;
+      return "Square Root: sqrt(" + firstNumber + ") = " + result;
+
+    } catch (NegativeSquareRootException exception) {
+      return "Square Root with negative " + firstNumber + " not possible";
     }
-
-    /**
-     * Returns a readable representation of the square root.
-     *
-     * @return the square root expression and its result
-     */
-    @Override
-    public String toString() {
-        double firstNumber = getFirstNum();
-        double result = calculate();
-        if (Double.isNaN(result)) {
-            return "Square Root with negative " + firstNumber + " not possible";
-        }
-        return "Square Root: " + "sqrt("+firstNumber+")" + " = " + result;
-    }
+  }
 }
