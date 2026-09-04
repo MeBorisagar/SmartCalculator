@@ -1,4 +1,4 @@
-package com.meet.assessment.TaskA;
+package com.meet.assessment.TaskAB;
 
 public class LoanCalculator {
 
