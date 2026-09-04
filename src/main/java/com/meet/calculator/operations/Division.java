@@ -2,55 +2,56 @@ package com.meet.calculator.operations;
 
 import com.meet.calculator.Calculable;
 import com.meet.calculator.Operation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.meet.calculator.exceptions.DivisionByZeroException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-/**
- * Represents a division operation.
- */
-
+/** Represents a division operation. */
 public class Division extends Operation implements Calculable {
 
-    private static final Logger log = LoggerFactory.getLogger(Division.class);
+  public Division(double firstNum, double secondNum) {
+    super(firstNum, secondNum);
+  }
 
-    public Division(double firstNum, double secondNum) {
-        super(firstNum, secondNum);
+  /**
+   * Divides the first operand by the second operand using BigDecimal for improved decimal
+   * precision.
+   *
+   * @return the quotient rounded to ten decimal places
+   * @throws DivisionByZeroException if the second operand is zero
+   */
+  @Override
+  public double calculate() {
+    double firstNumber = getFirstNum();
+    double secondNumber = getSecondNum();
+
+    if (secondNumber == 0) {
+      throw new DivisionByZeroException();
     }
 
-    /**
-     * Divides the first operand by the second operand.
-     *
-     * @return the quotient rounded to two decimal places,
-     * or NaN when the second operand is zero
-     */
-    @Override
-    public double calculate() {
-        double firstNumber = getFirstNum();
-        double secondNumber = getSecondNum();
+    BigDecimal bdA = BigDecimal.valueOf(firstNumber);
+    BigDecimal bdB = BigDecimal.valueOf(secondNumber);
 
-        if (secondNumber == 0) {
-            log.warn("Error : Division by zero");
-            return Double.NaN;
-        }
+    return bdA.divide(bdB, 2, RoundingMode.HALF_UP).doubleValue();
+  }
 
-        double result = firstNumber / secondNumber;
+  /**
+   * Returns a readable representation of the division.
+   *
+   * @return the division expression and its result
+   */
+  @Override
+  public String toString() {
+    double firstNumber = getFirstNum();
+    double secondNumber = getSecondNum();
 
-        return Math.round(result * 100.0) / 100.0;
+    try {
+      double result = calculate();
+
+      return "Division: " + firstNumber + " / " + secondNumber + " = " + result;
+
+    } catch (DivisionByZeroException exception) {
+      return "Division with zero " + firstNumber + " / " + secondNumber + " not possible";
     }
-
-    /**
-     * Returns a readable representation of the division.
-     *
-     * @return the division expression and its result
-     */
-    @Override
-    public String toString() {
-        double firstNumber = getFirstNum();
-        double secondNumber = getSecondNum();
-        double result = calculate();
-        if (Double.isNaN(result)) {
-            return "Division with zero " + firstNumber + " / " + secondNumber + " not possible";
-        }
-        return "Division: " + firstNumber + " / " + secondNumber + " = " + result;
-    }
+  }
 }
