@@ -1,4 +1,4 @@
-package com.meet.assessment.TaskAB;
+package com.meet.assessment;
 
 public class PersonalLoan extends Loan {
 

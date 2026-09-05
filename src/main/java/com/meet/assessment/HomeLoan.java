@@ -1,4 +1,4 @@
-package com.meet.assessment.TaskAB;
+package com.meet.assessment;
 
 public class HomeLoan extends Loan implements Auditable,Exportable {
 
