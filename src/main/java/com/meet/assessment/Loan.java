@@ -8,6 +8,14 @@ public abstract class Loan {
     protected final double annualRate;
     protected final int tenureMonths;
 
+    public String getLoanId() {
+        return loanId;
+    }
+
+    public String getApplicantName() {
+        return applicantName;
+    }
+
     protected Loan(String id, String name, double principal, double rate, int tenure) {
         this.loanId = id;
         this.applicantName = name;
