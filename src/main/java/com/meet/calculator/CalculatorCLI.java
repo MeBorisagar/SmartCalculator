@@ -14,12 +14,12 @@ public class CalculatorCLI {
 
   private final BufferedReader reader;
 
-  private final OperationSelector operationSelector;
+  private final Calculator calculator;
 
   /** Creates a calculator CLI using standard input. */
   public CalculatorCLI() {
     reader = new BufferedReader(new InputStreamReader(System.in));
-    operationSelector = new OperationSelector();
+    calculator = new Calculator();
   }
 
   /** Starts the calculator command-line loop. */
@@ -67,9 +67,7 @@ public class CalculatorCLI {
       if (isUnary(op)) {
 
         try {
-          Calculable resultObj = operationSelector.createOperation(op, firstNum);
-
-          double result = resultObj.calculate();
+          double result = calculator.squareRoot(firstNum);
 
           log.info(
               "Calculation performed: {} {} = {}", firstNum, op, String.format("%.2f", result));
@@ -97,9 +95,7 @@ public class CalculatorCLI {
       }
 
       try {
-        Calculable resultObj = operationSelector.createOperation(op, firstNum, secondNum);
-
-        double result = resultObj.calculate();
+        double result = calculate(op, firstNum, secondNum);
 
         log.info(
             "Calculation performed: {} {} {} = {}",
@@ -162,5 +158,18 @@ public class CalculatorCLI {
 
   private boolean isUnary(String operator) {
     return operator.equals("sqrt");
+  }
+
+  private double calculate(String operator, double firstNumber, double secondNumber) {
+
+    return switch (operator) {
+      case "+" -> calculator.add(firstNumber, secondNumber);
+      case "-" -> calculator.subtract(firstNumber, secondNumber);
+      case "*" -> calculator.multiply(firstNumber, secondNumber);
+      case "/" -> calculator.divide(firstNumber, secondNumber);
+      case "%" -> calculator.modulus(firstNumber, secondNumber);
+      case "pct" -> calculator.percentage(firstNumber, secondNumber);
+      default -> throw new InvalidOperationException("Invalid operation: " + operator);
+    };
   }
 }
