@@ -71,8 +71,9 @@ public class CalculatorCLI {
 
           double result = resultObj.calculate();
 
-          log.info(
-              "Calculation performed: {} {} = {}", firstNum, op, String.format("%.2f", result));
+          if (log.isInfoEnabled()) {
+            log.info("Calculation performed: {} {} = {}", firstNum, op, String.format("%.2f", result));
+          }
 
         } catch (NegativeSquareRootException e) {
           log.warn(e.getMessage());
@@ -101,12 +102,9 @@ public class CalculatorCLI {
 
         double result = resultObj.calculate();
 
-        log.info(
-            "Calculation performed: {} {} {} = {}",
-            firstNum,
-            op,
-            secondNum,
-            String.format("%.2f", result));
+        if (log.isInfoEnabled()) {
+          log.info("Calculation performed: {} {} {} = {}", firstNum, op, secondNum, String.format("%.2f", result));
+        }
 
       } catch (DivisionByZeroException | ModuloByZeroException e) {
         log.warn(e.getMessage());
