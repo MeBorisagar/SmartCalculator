@@ -32,7 +32,7 @@ public class Division extends Operation implements Calculable {
     BigDecimal bdA = BigDecimal.valueOf(firstNumber);
     BigDecimal bdB = BigDecimal.valueOf(secondNumber);
 
-    return bdA.divide(bdB, 2, RoundingMode.HALF_UP).doubleValue();
+    return bdA.divide(bdB, 10, RoundingMode.HALF_UP).doubleValue();
   }
 
   /**

@@ -26,9 +26,9 @@ public class Modulus extends Operation implements Calculable {
       throw new ModuloByZeroException();
     }
 
-    double result = firstNumber % secondNumber;
+    return firstNumber % secondNumber;
 
-    return Math.round(result * 100.0) / 100.0;
+
   }
 
   /**

@@ -19,9 +19,9 @@ public class Percentage extends Operation implements Calculable {
     double firstNumber = getFirstNum();
     double secondNumber = getSecondNum();
 
-    double result = (firstNumber * secondNumber) / 100;
+    return (firstNumber * secondNumber) / 100;
 
-    return Math.round(result * 100.0) / 100.0;
+
   }
 
   /**

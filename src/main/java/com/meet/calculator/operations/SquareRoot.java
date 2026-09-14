@@ -24,9 +24,9 @@ public class SquareRoot extends Operation implements Calculable {
       throw new NegativeSquareRootException();
     }
 
-    double result = Math.sqrt(firstNumber);
+    return Math.sqrt(firstNumber);
 
-    return Math.round(result * 100.0) / 100.0;
+
   }
 
   /**

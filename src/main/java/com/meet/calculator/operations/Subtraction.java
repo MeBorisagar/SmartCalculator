@@ -17,8 +17,8 @@ public class Subtraction extends Operation implements Calculable {
    */
   @Override
   public double calculate() {
-    double result = getFirstNum() - getSecondNum();
-    return Math.round(result * 100.0) / 100.0;
+    return getFirstNum() - getSecondNum();
+
   }
 
   /**
