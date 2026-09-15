@@ -60,17 +60,17 @@ Direct development on main should be avoided.
 
 ## Project Status
 
-**Status:** In Development
+**Status:** Completed
 
-| Phase | Branch                 | Description | Status    |
-|---|------------------------|---|-----------|
-| Week 1 | `dev`                  | Project setup and Maven configuration | Completed |
-| Week 2 | `docs/srs`             | Requirements analysis and design documentation | Completed |
-| Week 3 | `feature/basic_CLI_loop` | Basic calculator CLI loop | Completed |
-| Week 4 | `feature/w4_OOP_Structure` | OOP structure and code hygiene | Completed |
-| Week 5 | `feature/w5_OOP_Design_Pillars` | OOP pillars and polymorphism | Completed |
+| Phase | Branch                             | Description | Status    |
+|---|------------------------------------|---|-----------|
+| Week 1 | `dev`                              | Project setup and Maven configuration | Completed |
+| Week 2 | `docs/srs`                         | Requirements analysis and design documentation | Completed |
+| Week 3 | `feature/basic_CLI_loop`           | Basic calculator CLI loop | Completed |
+| Week 4 | `feature/w4_OOP_Structure`         | OOP structure and code hygiene | Completed |
+| Week 5 | `feature/w5_OOP_Design_Pillars`    | OOP pillars and polymorphism | Completed |
 | Week 6 | `feature/w6_Robustness_CodeReview` | Robustness and code review | Completed |
-| Week 7 | `feature/w7_Logic_Algo_Debugging`  | Logic, algorithms and debugging | Completed       |
-| Week 8 | —                      | Static web UI and web awareness | Planned   |
+| Week 7 | `feature/w7_Logic_Algo_Debugging`  | Logic, algorithms and debugging | Completed |
+| Week 8 | `feature/w8_WebUI`                  | Static web UI and web awareness | Completed |
 
 ---
