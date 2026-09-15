@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meridian Retail Bank</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>
-        Meridian Retail Bank
-    </h1>
+    <h1>Meridian Retail Bank</h1>
 
     <nav>
         <ul>
@@ -22,90 +21,131 @@
             <li><a href="#">Settings</a></li>
         </ul>
     </nav>
-
 </header>
 
-<main>
-    <section>
-        <h2>Account Summary</h2>
+<div class="layout">
 
-        <table style="border: black">
-            <thead>
-            <tr>
-                <th>Account Number </th>
-                <th>Type</th>
-                <th>Balance </th>
-                <th>Last Transaction </th>
-                <th>Status</th>
-            </tr>
-            </thead>
+    <main>
 
-            <tbody>
-            <tbody>
-            <tr>
-                <td>AC101</td>
-                <td>Savings</td>
-                <td>50,000</td>
-                <td>5,000 credited</td>
-                <td>Active</td>
-            </tr>
+        <!-- Account Cards -->
+        <section class="account-cards">
+            <h2>Account Cards</h2>
 
-            <tr>
-                <td>AC102</td>
-                <td>Current</td>
-                <td>100,000</td>
-                <td>10,000 debited</td>
-                <td>Active</td>
-            </tr>
+            <div class="card-grid">
 
-            <tr>
-                <td>AC103</td>
-                <td>Savings</td>
-                <td>200,000</td>
-                <td>20,000 credited</td>
-                <td>Frozen</td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
+                <article class="account-card">
+                    <h3>Savings Account</h3>
+                    <p>Account: AC101</p>
+                    <p class="balance">₹50,000</p>
+                    <p>Status: Active</p>
+                </article>
 
-    <section>
-        <h2>Recent Transactions</h2>
+                <article class="account-card">
+                    <h3>Current Account</h3>
+                    <p>Account: AC102</p>
+                    <p class="balance">₹100,000</p>
+                    <p>Status: Active</p>
+                </article>
 
-        <ol>
-            <li>5,000 salary credited to AC101.</li>
-            <li>10,000 salary debited from AC102.</li>
-            <li>32,500 transferred to  Account AC101.</li>
-            <li>10,000 interest credited to AC102.</li>
-        </ol>
-    </section>
-</main>
+                <article class="account-card">
+                    <h3>Savings Account</h3>
+                    <p>Account: AC103</p>
+                    <p class="balance">₹200,000</p>
+                    <p>Status: Frozen</p>
+                </article>
 
-<aside>
-    <h2>Quick Transfer</h2>
+            </div>
+        </section>
 
-    <form>
-        <p>
-            <label for="recipient">Recipient Account:</label>
-            <input type="text" id="recipient" name="recipient" required minlength="6">
-        </p>
+        <!-- Account Summary -->
+        <section>
+            <h2>Account Summary</h2>
 
-        <p>
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" min="1" max="200000" step="1" required>
-        </p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Type</th>
+                    <th>Balance</th>
+                    <th>Last Transaction</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
 
-        <p>
-            <label for="remarks">Remarks:</label>
-            <input type="text" id="remarks" name="remarks" maxlength="50">
-        </p>
+                <tbody>
+                <tr>
+                    <td>AC101</td>
+                    <td>Savings</td>
+                    <td>50,000</td>
+                    <td>5,000 credited</td>
+                    <td>Active</td>
+                </tr>
 
-        <button type="submit">Transfer Now</button>
-    </form>
-</aside>
+                <tr>
+                    <td>AC102</td>
+                    <td>Current</td>
+                    <td>100,000</td>
+                    <td>10,000 debited</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>AC103</td>
+                    <td>Savings</td>
+                    <td>200,000</td>
+                    <td>20,000 credited</td>
+                    <td>Frozen</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section>
+            <h2>Recent Transactions</h2>
+
+            <ol>
+                <li>5,000 salary credited to AC101.</li>
+                <li>10,000 salary debited from AC102.</li>
+                <li>32,500 transferred to Account AC101.</li>
+                <li>10,000 interest credited to AC102.</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <!-- Quick Transfer -->
+    <aside>
+        <h2>Quick Transfer</h2>
+
+        <form>
+            <p>
+                <label for="recipient">Recipient Account:</label>
+                <input type="text" id="recipient" name="recipient"
+                       required minlength="6">
+            </p>
+
+            <p>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount"
+                       min="1" max="200000" step="1" required>
+            </p>
+
+            <p>
+                <label for="remarks">Remarks:</label>
+                <input type="text" id="remarks" name="remarks"
+                       maxlength="50">
+            </p>
+
+            <button type="submit">Transfer Now</button>
+        </form>
+    </aside>
+
+</div>
 
 <footer>
-    <p>&#169 2025 Meridian Retail Bank | Powered by Savoira</p>
+    <p>&#169; 2025 Meridian Retail Bank | Powered by Savoira</p>
 </footer>
+
 </body>
 </html>
