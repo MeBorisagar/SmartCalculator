@@ -33,12 +33,7 @@ public class CalculatorCLI {
       String input = readInput("Enter first number (or 'exit'): ");
 
       if (input == null) {
-        try {
-          throw new NullPointerException("Input cannot be null.");
-        } catch (NullPointerException npe) {
-          log.error("{}", npe.getMessage());
-          continue;
-        }
+       break;
       }
 
       if (input.equalsIgnoreCase("exit")) {
@@ -71,8 +66,10 @@ public class CalculatorCLI {
 
           double result = resultObj.calculate();
 
-          log.info(
-              "Calculation performed: {} {} = {}", firstNum, op, String.format("%.2f", result));
+          if (log.isInfoEnabled()) {
+            log.info(
+                "Calculation performed: {} {} = {}", firstNum, op, String.format("%.2f", result));
+          }
 
         } catch (NegativeSquareRootException e) {
           log.warn(e.getMessage());
@@ -101,15 +98,17 @@ public class CalculatorCLI {
 
         double result = resultObj.calculate();
 
-        log.info(
-            "Calculation performed: {} {} {} = {}",
-            firstNum,
-            op,
-            secondNum,
-            String.format("%.2f", result));
+        if (log.isInfoEnabled()) {
+          log.info(
+              "Calculation performed: {} {} {} = {}",
+              firstNum,
+              op,
+              secondNum,
+              String.format("%.2f", result));
+        }
 
       } catch (DivisionByZeroException | ModuloByZeroException e) {
-        log.warn(e.getMessage());
+        log.error(e.getMessage());
       }
     }
 
