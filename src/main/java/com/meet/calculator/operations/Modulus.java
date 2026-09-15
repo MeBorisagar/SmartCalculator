@@ -27,8 +27,6 @@ public class Modulus extends Operation implements Calculable {
     }
 
     return firstNumber % secondNumber;
-
-
   }
 
   /**

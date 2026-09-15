@@ -18,7 +18,6 @@ public class Addition extends Operation implements Calculable {
   @Override
   public double calculate() {
     return getFirstNum() + getSecondNum();
-
   }
 
   /**

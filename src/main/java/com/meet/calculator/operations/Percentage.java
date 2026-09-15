@@ -20,8 +20,6 @@ public class Percentage extends Operation implements Calculable {
     double secondNumber = getSecondNum();
 
     return (firstNumber * secondNumber) / 100;
-
-
   }
 
   /**

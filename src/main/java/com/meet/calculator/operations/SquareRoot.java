@@ -25,8 +25,6 @@ public class SquareRoot extends Operation implements Calculable {
     }
 
     return Math.sqrt(firstNumber);
-
-
   }
 
   /**
