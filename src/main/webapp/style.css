@@ -1,98 +1,275 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    min-height: 100vh;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+}
+
+header {
+    background-color: #1F3864;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0 0 1rem 0;
+}
+
+ /*Navbar*/
+
+nav ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: antiquewhite;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.calculator {
-    width: 90%;
-    max-width: 375px;
-    padding: 20px;
-    background: white;
-    border: 1px solid #d9dee5;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+nav li {
+    margin-right: 5px;
 }
 
-
-.display {
-    margin-bottom: 16px;
+nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
-
-#screen {
-    width: 100%;
-    height: 70px;
-    padding: 10px 14px;
-    border: 1px solid #c9ced6;
-    border-radius: 10px;
-    background: #eef1f5;
-    font-size: 30px;
-    text-align: right;
+nav a:hover {
+    background-color: #0F7C7C;
 }
 
 
-.buttons {
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+main {
+    min-width: 0;
+}
+
+aside {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+ /*Account card Grid*/
+
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
-.btn {
-    height: 60px;
+.account-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #0F7C7C;
+    background-color: white;
+}
+
+.account-card h3 {
+    margin-top: 0;
+    color: #1F3864;
+}
+
+.account-card .balance {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Different coloured left-border accents */
+
+.account-card:nth-child(2) {
+    border-left-color: #1F3864;
+}
+
+.account-card:nth-child(3) {
+    border-left-color: #d69e2e;
+}
+
+/*Account Summary Table*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #1F3864;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Zebra striping */
+
+tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #EAF1FB;
+}
+
+/*Transfer Form*/
+
+aside form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+aside form input:focus {
+    outline: 3px solid #0F7C7C;
+    border-color: #0F7C7C;
+}
+
+aside label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+aside form p {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 12px 20px;
     border: none;
-    border-radius: 10px;
-    background: #e7ebf0;
-    font-size: 20px;
+    border-radius: 8px;
+    background-color: #1F3864;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
 }
 
-.btn:hover {
-    background: #d9dee5;
-}
-
-.operator {
-    background: #f0a04b;
-    color: #ffffff;
-}
-
-.operator:hover {
-    background: #df8d35;
-}
-
-.equals {
-    background: #1f3864;
-    color: #ffffff;
-}
-
-.equals:hover {
-    background: #162b4d;
-}
-
-.zero {
-    grid-column: span 2;
+button:hover {
+    background-color: #0F7C7C;
 }
 
 
-@media screen and (max-width: 375px) {
-    .calculator {
-        padding: 16px;
-        border-radius: 16px;
+/*Loan Application Form*/
+
+.loan-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loan-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.loan-form input,
+.loan-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.loan-form input:focus,
+.loan-form select:focus {
+    outline: 3px solid #0F7C7C;
+    border-color: #0F7C7C;
+}
+
+.loan-form button {
+    margin-top: 0.5rem;
+}
+
+
+footer {
+    background-color: #1F3864;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+
+
+@media (min-width: 901px) {
+
+    .layout {
+        flex-direction: row;
+        align-items: flex-start;
     }
 
-    .btn {
-        height: 52px;
-        font-size: 18px;
+    main {
+        flex: 0 0 70%;
     }
 
-    #screen {
-        height: 60px;
-        font-size: 26px;
+    aside {
+        flex: 0 0 30%;
+    }
+}
+
+
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+@media (max-width: 599px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
     }
 }
