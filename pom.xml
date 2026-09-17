@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.meet</groupId>
-  <artifactId>smartcalculator</artifactId>
+  <artifactId>SmartCalculator</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>SmartCalculator</name>
+  <name>smartcalculator</name>
   <url>http://www.example.com</url>
+
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+      <sonar.projectKey>calculator</sonar.projectKey>
+      <sonar.projectName>Calculator</sonar.projectName>
+      <sonar.host.url>http://localhost:9000</sonar.host.url>
+      <sonar.exclusions>**/test/**</sonar.exclusions>
 
 
     <junit.version>5.12.2</junit.version>
@@ -49,6 +53,17 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.11.0</version>
+    </dependency>
   </dependencies>
 
 
@@ -72,6 +87,11 @@
       </plugin>
 
 
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.5.0.6356</version>
+      </plugin>
 
 
 
