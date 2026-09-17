@@ -1,0 +1,58 @@
+Assignment 1: SDLC & Software Engineering
+
+Name : Meet Borisagar
+
+
+
+Task 1 : Matching activity to SDLC phase
+
+(a) writing the upload code    :  implementation
+(b) drawing the screen layout   : design
+(c) releasing to customers     :  deployment
+(d) listing what the feature must do   : requirements gathering
+(e) checking a blurry photo is rejected  : testing
+(f) fixing a bug reported after launch.   : maintenance
+
+
+
+Task 2 : Requirements
+
+Functional Requirements :
+
+(1) feature shall allow users to capture the image of cheque using mobile application and deposit the cheque.
+(2) feature shall send confirmation(SMS or Email) after successful deposit.
+(3) feature shall verify the image quality and reject blurry/incomplete images.
+
+Non-functional Requirements :
+
+(1) feature shall work on both android and ios devices.
+(2) feature shall support 1,00,000 concurrent users.
+(3) feature shall provide meaningful message when deposite fails.
+
+
+
+Task 3 : Model choice
+
+Agile model is better choice here because : 
+(1) suitable fixing bug after launch
+(2) able to provide working version to customer early.
+(3) easier to make changes after customer feedback and with changing requirements.
+
+
+Task 4 : Team roles
+
+
+Project Manager  :  interacts with stakeholders, gathering requirements,agile Manager
+
+Designer :
+    - design feature architecture in design phase
+    - UI/UX design for mobile application screens
+
+developers :
+    - App developer - developing app for android/ios
+    - backend developer - handling backend operation like storage, security etc.
+
+Tester :  test the feature and identify defects.
+
+DevOps : optimizing development process, in deployment
+
