@@ -1,4 +1,4 @@
-package com.meet.w6;
+package com.meet.Week6HandsOn.HandsOn1;
 
 public class PaymentException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package com.meet.w6;
+package com.meet.Week6HandsOn.HandsOn1;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
