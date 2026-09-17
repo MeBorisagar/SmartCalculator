@@ -1,4 +1,4 @@
-package com.meet.w6;
+package com.meet.Week6HandsOn.HandsOn2;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
