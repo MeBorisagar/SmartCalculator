@@ -1,4 +1,4 @@
-package com.meridianbank.threads;
+package com.meet.Week6HandsOn.HandsOn3.threads;
 
 
 import org.slf4j.Logger;
