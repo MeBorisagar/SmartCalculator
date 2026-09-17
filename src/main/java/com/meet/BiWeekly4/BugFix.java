@@ -1,4 +1,4 @@
-package com.meet.assessment;
+package com.meet.BiWeekly4;
 
 public class BugFix {
 

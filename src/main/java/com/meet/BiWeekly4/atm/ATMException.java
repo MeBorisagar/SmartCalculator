@@ -1,4 +1,4 @@
-package com.meet.assessment.atm;
+package com.meet.BiWeekly4.atm;
 
 public class ATMException extends RuntimeException {
     public ATMException(String message) {
