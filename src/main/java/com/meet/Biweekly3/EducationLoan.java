@@ -1,4 +1,4 @@
-package com.meet.assessment;
+package com.meet.Biweekly3;
 
 public class EducationLoan extends Loan {
 

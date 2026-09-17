@@ -1,4 +1,4 @@
-package com.meet.assessment;
+package com.meet.Biweekly3;
 
 public class InsufficientIncomeException extends LoanException {
     private final double shortfall;
