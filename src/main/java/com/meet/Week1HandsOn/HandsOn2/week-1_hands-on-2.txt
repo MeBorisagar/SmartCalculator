@@ -1,0 +1,6 @@
+65e2b1f merge: resolve profile tagline conflict
+e6b12bc docs: update profile heading
+67acc73 feat(profile): add personal tagline
+525b98a docs: add location
+5807432 docs: add email
+627ae00 docs: add profile
