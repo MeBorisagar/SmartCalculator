@@ -1,4 +1,4 @@
-package com.meet.handsOn.week3;
+package com.meet.Week3HandsOn.HandsOn1;
 
 import java.util.Scanner;
 
