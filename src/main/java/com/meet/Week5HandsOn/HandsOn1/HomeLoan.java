@@ -1,4 +1,4 @@
-package com.meet.w5;
+package com.meet.Week5HandsOn.HandsOn1;
 
 public class HomeLoan extends Loan{
 
