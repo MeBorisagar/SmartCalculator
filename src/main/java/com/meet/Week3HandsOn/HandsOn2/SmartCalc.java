@@ -1,5 +1,6 @@
-package com.meet.calculator;
+package com.meet.Week3HandsOn.HandsOn2;
 
+import com.meet.calculator.Main;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
