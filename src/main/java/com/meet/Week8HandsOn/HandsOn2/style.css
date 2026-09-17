@@ -1,0 +1,325 @@
+/*Mobile first Approach*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header */
+
+header {
+    width: 100%;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 0 0 15px;
+    font-size: 26px;
+}
+
+
+/*Navbar*/
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #1F3864;
+    overflow: hidden;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #38547D;
+}
+
+nav li:last-child a {
+    border-bottom: none;
+}
+
+nav a:hover {
+    background: #0F7C7C;
+}
+
+
+/*main*/
+
+main {
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+
+/*Account summary table*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead {
+    background: #1F3864;
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+    background: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #EAF1FB;
+}
+
+td.frozen {
+    color: #C0504D;
+    font-weight: bold;
+}
+
+/*Recent Transactions*/
+
+section ol {
+    margin: 0;
+    padding-left: 28px;
+}
+
+section ol li {
+    padding: 9px 10px;
+    margin-bottom: 7px;
+    background: #EAF1FB;
+    border-left: 4px solid #1F3864;
+}
+
+section ol li:nth-child(even) {
+    background: white;
+}
+
+section ol li:hover {
+    background: #0F7C7C;
+    color: white;
+}
+
+
+/*form*/
+
+aside {
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+}
+
+aside h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+form {
+    width: 100%;
+    margin: 0;
+}
+
+form p {
+    width: 100%;
+    margin: 0 0 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form input:focus {
+    outline: 2px solid #0F7C7C;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background: #1F3864;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #12254F;
+}
+
+
+/*footer*/
+
+footer {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+/*for width between 600px to 900px */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .mainContent{
+        display: flex;
+    }
+    main {
+        width: 70%;
+        padding: 20px;
+    }
+
+    aside {
+        width: 30%;
+        padding: 20px;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+
+    nav {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        width: auto;
+    }
+
+    nav li {
+        width: auto;
+    }
+
+    nav a {
+        width: auto;
+        padding: 10px 16px;
+    }
+
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+
+/*for width more than 900px*/
+
+
+@media (min-width: 901px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        width: auto;
+    }
+
+    nav li {
+        width: auto;
+    }
+
+    nav a {
+        width: auto;
+        padding: 10px 16px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    aside {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+}

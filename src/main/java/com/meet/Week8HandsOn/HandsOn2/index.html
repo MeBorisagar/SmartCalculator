@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Retail Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>
+    Meridian Retail Bank
+    </h1>
+
+    <nav >
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Accounts</a></li>
+            <li><a href="#">Transfers</a></li>
+            <li><a href="#">Loans</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="mainContent">
+
+    <main>
+        <section>
+            <h2>Account Summary</h2>
+
+            <table style="border: black">
+                <thead>
+                <tr>
+                    <th>Account Number </th>
+                    <th>Type</th>
+                    <th>Balance </th>
+                    <th>Last Transaction </th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tbody>
+                <tr>
+                    <td>AC101</td>
+                    <td>Savings</td>
+                    <td>50,000</td>
+                    <td>5,000 credited</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>AC102</td>
+                    <td>Current</td>
+                    <td>100,000</td>
+                    <td>10,000 debited</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>AC103</td>
+                    <td>Savings</td>
+                    <td>200,000</td>
+                    <td>20,000 credited</td>
+                    <td class="frozen">Frozen</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Recent Transactions</h2>
+
+            <ol>
+                <li>5,000 salary credited to AC101.</li>
+                <li>10,000 salary debited from AC102.</li>
+                <li>32,500 transferred to  Account AC101.</li>
+                <li>10,000 interest credited to AC102.</li>
+            </ol>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Quick Transfer</h2>
+
+        <form>
+            <p>
+                <label for="recipient">Recipient Account:</label>
+                <input type="text" id="recipient" name="recipient" required minlength="6">
+            </p>
+
+            <p>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" min="1" max="200000" step="1" required>
+            </p>
+
+            <p>
+                <label for="remarks">Remarks:</label>
+                <input type="text" id="remarks" name="remarks" maxlength="50">
+            </p>
+
+            <button type="submit">Transfer Now</button>
+        </form>
+    </aside>
+</section>
+
+<footer>
+    <p>&#169 2025 Meridian Retail Bank | Powered by Savoira</p>
+</footer>
+</body>
+</html>
