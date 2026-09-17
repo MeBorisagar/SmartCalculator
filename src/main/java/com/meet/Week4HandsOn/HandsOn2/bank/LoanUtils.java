@@ -1,4 +1,4 @@
-package com.meet.calculator.bank;
+package com.meet.Week4HandsOn.HandsOn2.bank;
 
 /**
  * Provides utility methods for loan-related calculations.
