@@ -1,4 +1,4 @@
-package com.meet.calculator.assessment2;
+package com.meet.Biweekly2.assessment2;
 
 public class MathUtils {
 
